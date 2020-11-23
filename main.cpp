@@ -16,7 +16,17 @@ int main (){
     first = randten();
     sec = randten();
   }
+  std::cout << "-----------------------------------------------" << std::endl;
 
+  //Task B
+  std::cout << "Task B" << std::endl;
+  for (int i=0; i<5; i++){
+    std::cout << "The sum of consecutive integers from " << first << " to " << sec << " is: " << sumRange(first,sec) << std::endl; 
+    first = randten();
+    sec = randten();
+  }
+
+  
 }
 
 int randten(){
