@@ -25,8 +25,22 @@ int main (){
     first = randten();
     sec = randten();
   }
+  std::cout << "-----------------------------------------------" << std::endl;
 
-  
+  //Task C
+  std::cout << "Task C" << std::endl;
+  int size = 0;
+  for (int i=0; i<3; i++){
+    size = rand()%10;
+    int *arr = new int[size];
+    for (int j=0; j<size; j++){
+      arr[j] = randten();
+    }
+    std::cout << "In the array: " << printArray(arr, size) << std::endl;
+    std::cout << "\tThe sum is : " << sumArray(arr, size) << std::endl;
+    delete[] arr;
+  }
+
 }
 
 int randten(){
@@ -37,3 +51,4 @@ int randten(){
     return (rand()%10) * -1;
   }
 }
+
