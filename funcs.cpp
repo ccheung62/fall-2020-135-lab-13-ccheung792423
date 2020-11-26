@@ -34,7 +34,7 @@ int sumArray(int *arr, int size){ //add elements in arr for size times
 }
 
 //Task D
-bool isAlphanumeric(std::string s){ //continue the loop until all letters are substringed out or one ch
+bool isAlphanumeric(std::string s){ //substring each letter out until all letters are substringed out or one character isn't alphanumerical
   if (s == ""){
     return true;
   }
@@ -46,6 +46,23 @@ bool isAlphanumeric(std::string s){ //continue the loop until all letters are su
   }
 }
 
+//Task E
+bool nestedParens(std::string s){ //delete a ) upon seeing a ( and return false when neither could be found but there are still remaining characters
+  if (s == ""){
+    return true;
+  }
+  else if (s[0] != '('){
+    return false;
+  }
+  else if (s.find("(") == std::string::npos || s.find(")") == std::string::npos || s.find("(") > s.find(")")){
+    return false;
+  }
+  else {
+    s.erase(0,1);
+    return nestedParens(s.erase(s.find(")"), 1)); 
+  }
+  
+}
 
 std::string printArray (int* arr, int size){
   std::string result = "";

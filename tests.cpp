@@ -59,4 +59,29 @@ TEST_CASE("Task C: Regular Cases"){
 }
 
 //Task D
+TEST_CASE("Task D: Regular Cases"){
+  CHECK(isAlphanumeric("AKBgers823") == true);
+  CHECK(isAlphanumeric("KDN432 dgf") == false);
+  CHECK(isAlphanumeric("%$%&^$* &&%") == false);
+}
 
+TEST_CASE("Task D: Empty String"){
+  CHECK(isAlphanumeric("") == true);
+}
+
+//Task E
+TEST_CASE("Task E: Regular Cases"){
+  CHECK(nestedParens("((()))") == true);
+  CHECK(nestedParens("ag()") == false);
+  CHECK(nestedParens("((())") == false);
+}
+
+TEST_CASE("Task E: Empty string"){
+  CHECK(nestedParens("") == true);
+}
+
+TEST_CASE("Task E: The number of ( and ) are correct but the order is wrong"){
+  CHECK(nestedParens(")(") == false);
+  CHECK(nestedParens("))()((") == false);
+  CHECK(nestedParens("())()(") == false);
+}

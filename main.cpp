@@ -61,8 +61,16 @@ int main (){
   }
   std::cout << "-----------------------------------------------" << std::endl;
 
- 
+  //Task E
+  std::cout << "Task E" << std::endl;
+  std::cout << nestedParens("((()))") << std::endl;      // true (1)
+  std::cout << nestedParens("()") << std::endl;          // true (1)
+  std::cout << nestedParens("") << std::endl;            // true (1)
 
+  std::cout << nestedParens("(((") << std::endl;         // false (0)
+  std::cout << nestedParens("(()") << std::endl;         // false (0)
+  std::cout << nestedParens(")(") << std::endl;          // false (0)
+  std::cout << nestedParens("a(b)c") << std::endl;       // false (0)
 
 }
 
