@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <cstdlib>
 
 #include "funcs.h"
@@ -30,7 +31,7 @@ int main (){
   //Task C
   std::cout << "Task C" << std::endl;
   int size = 0;
-  for (int i=0; i<3; i++){
+  for (int i=0; i<5; i++){
     size = rand()%10;
     int *arr = new int[size];
     for (int j=0; j<size; j++){
@@ -40,6 +41,28 @@ int main (){
     std::cout << "\tThe sum is : " << sumArray(arr, size) << std::endl;
     delete[] arr;
   }
+  std::cout << "-----------------------------------------------" << std::endl;
+
+  //Task D
+  std::cout << "Task D" << std::endl;
+  std::string phrase = "";
+  for (int i=0; i<5; i++){
+    for (int i=0; i<rand()%10; i++){
+      phrase += rand()%95 + 32;
+    }
+    std::cout << "For the string: " << phrase << "\n\t";
+    if (isAlphanumeric(phrase)){
+      std::cout << "is alphanumerical" << std::endl;
+    }
+    else {
+      std::cout << "is not alphanumerical" << std::endl;
+    }
+    phrase = "";
+  }
+  std::cout << "-----------------------------------------------" << std::endl;
+
+ 
+
 
 }
 

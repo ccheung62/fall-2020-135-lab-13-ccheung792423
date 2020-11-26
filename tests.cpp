@@ -58,4 +58,5 @@ TEST_CASE("Task C: Regular Cases"){
   CHECK(sumArray(a,5) == -24);
 }
 
+//Task D
 
