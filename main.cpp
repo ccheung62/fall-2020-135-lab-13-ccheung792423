@@ -5,6 +5,7 @@
 #include "funcs.h"
 
 int randten();
+void printE(std::string str);
 
 int main (){
   srand(time(0));
@@ -63,14 +64,20 @@ int main (){
 
   //Task E
   std::cout << "Task E" << std::endl;
-  std::cout << nestedParens("((()))") << std::endl;      // true (1)
-  std::cout << nestedParens("()") << std::endl;          // true (1)
-  std::cout << nestedParens("") << std::endl;            // true (1)
-
-  std::cout << nestedParens("(((") << std::endl;         // false (0)
-  std::cout << nestedParens("(()") << std::endl;         // false (0)
-  std::cout << nestedParens(")(") << std::endl;          // false (0)
-  std::cout << nestedParens("a(b)c") << std::endl;       // false (0)
+  std::string str = "((()))";
+  printE(str);
+  str = "()";
+  printE(str);
+  str = "";
+  printE(str);
+  str = "(((";
+  printE(str);
+  str = "(()";
+  printE(str);
+  str = ")(";
+  printE(str);
+  str = "a(b)c";
+  printE(str);
 
 }
 
@@ -80,6 +87,16 @@ int randten(){
   }
   else {
     return (rand()%10) * -1;
+  }
+}
+
+void printE(std::string str){
+  std::cout << "\"" << str << "\"" << " is ";
+  if (nestedParens(str)) { //true 
+    std::cout << "a sequence of nested parentheses" << std::endl;
+  }    
+  else {
+    std::cout << "not a sequence of nested parentheses" << std::endl;
   }
 }
 
